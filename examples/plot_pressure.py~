@@ -1,0 +1,7 @@
+import matplotlib.pyplot as plt
+import xarray
+import numpy as np
+import cartopy.crs as ccrs
+
+ds=xarray.load_dataset("/work/ta116/shared/users/tetts_ta/cesm/archive/FHIST_1982_2014_OSTIA/atm/hist/FHIST_1982_2014_OSTIA.cam.h1.1982-01-01-00000.nc") # daily data
+ 
