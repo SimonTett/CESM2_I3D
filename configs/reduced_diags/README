@@ -1,0 +1,2 @@
+Reduce diagnostics setup for CESM2.1.5.
+Very reduced atmosphere and ocn diagnostics being generated once a year.
