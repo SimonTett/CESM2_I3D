@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# run this script to setup up a virtual env
+module load PrgEnv-gnu
+module load cray-python
+module load tk
+module load tcl
+module load matplotlib
+python -m venv --system-site-packages /work/ta167/ta167/tetts_ta167/python_venv
+source /work/ta167/ta167/tetts_ta167/python_venv/bin/activate
+CC=cc CXX=CC FC=ftn # setup compilers
+python -m pip install -r requirements.txt
+deactivate
