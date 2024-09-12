@@ -1,11 +1,12 @@
 #!/bin/csh -f
-# Modified by SFBT to onlyhave annual output for stream#1
+# Modified by SFBT to have stream#1 be saved annually (rather than monthly) and
+# stream#2 to be saved monthly rather than daily. All in attempt to reduce data volume
 if ( $OCN_GRID =~ gx* ) then
 #shut off time-invariant stream until vertical grid issues are resolved
 cat >! $CASEBUILD/popconf/base.tavg.nml << EOF
-tavg_freq_opt           = 'nyear'   'nday'   'once' 
+tavg_freq_opt           = 'nyear'   'nmonth'   'once' 
 tavg_freq               =     1         1       1   
-tavg_stream_filestrings = 'nyear1'  'nday1'  'once' 
+tavg_stream_filestrings = 'nyear1'  'nmonth1'  'once' 
 tavg_file_freq_opt      = 'nyear'   'nmonth' 'once' 
 tavg_file_freq          =     1         1       1    
 tavg_start_opt          = 'nstep'    'nstep'  'nstep'
