@@ -6,9 +6,9 @@ import cartopy.crs as ccrs # cartopy projections
 import pathlib
 
 xarray.set_options(keep_attrs=True) # keep attributes when doing arithmetic. 
-base_dir=pathlib.Path("/work/ta116/shared/users/tetts_ta/cesm/archive/")
-files1=sorted((base_dir/"FHIST_1982_2014_OSTIA/atm/hist/").glob("FHIST_1982_2014_OSTIA.cam.h1.198*-01-01-00000.nc"))
-files2=sorted((base_dir/"FHIST_1982_2014_OSTIA_a/atm/hist/").glob("FHIST_1982_2014_OSTIA_a.cam.h1.198*-01-01-00000.nc"))
+base_dir=pathlib.Path("/work/ta167/ta167/tetts_ta167/cesm/archive/")
+files1=sorted((base_dir/"SSP585_example/atm/hist/").glob("SSP585_example.cam.h1.2024*.nc"))
+files2=sorted((base_dir/"SSP585_case_a/atm/hist/").glob("SSP585_case_a.cam.h1.2024*.nc"))
 # show open_mfdataset -- multiple files
 ds1=xarray.open_mfdataset(files1) # daily data -- open => only have metadata
 ds2=xarray.open_mfdataset(files2) # daily data -- open => only have metadata

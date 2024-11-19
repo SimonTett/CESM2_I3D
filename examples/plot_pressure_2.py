@@ -5,14 +5,15 @@ import numpy as np # numpy
 import cartopy.crs as ccrs # cartopy projections
 
 xarray.set_options(keep_attrs=True) # keep attributes when doing arithmetic. 
-base_dir="/work/ta116/shared/users/tetts_ta/cesm/archive/"
-file=base_dir+"FHIST_1982_2014_OSTIA/atm/hist/FHIST_1982_2014_OSTIA.cam.h1.1982-01-01-00000.nc"
-file2=base_dir+"FHIST_1982_2014_OSTIA_a/atm/hist/FHIST_1982_2014_OSTIA_a.cam.h1.1982-01-01-00000.nc"
+base_dir="/work/ta167/ta167/tetts_ta167/cesm/archive/" 
+file=base_dir+"SSP585_example/atm/hist/SSP585_example.cam.h1.2024-01-01-00000.nc"
+file2=base_dir+"SSP585_case_a/atm/hist/SSP585_case_a.cam.h1.2024-01-01-00000.nc"
+
 ds1=xarray.open_dataset(file) # daily data -- open => only have metadata
 ds2=xarray.open_dataset(file2) # daily data -- open => only have metadata
 
 levels = np.arange(940,1038.,8) # levels for plotting. 2x normal pressure diffs
-time_index = [0,9] # 1st day and 9th day
+time_index = [0,9] # 1st day and 10th day
 dataArray = xarray.concat([ds1.PSL,ds2.PSL],dim='ensemble')
 # facet plot.
 facet = (dataArray.isel(time=time_index)/100.).plot(

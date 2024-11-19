@@ -6,7 +6,7 @@ import cartopy.crs as ccrs # cartopy projections
 
 xarray.set_options(keep_attrs=True) # keep attributes when doing arithmetic. 
 
-file="/work/ta116/shared/users/tetts_ta/cesm/archive/FHIST_1982_2014_OSTIA/atm/hist/FHIST_1982_2014_OSTIA.cam.h1.1982-01-01-00000.nc"
+file="/work/ta167/ta167/tetts_ta167/cesm/archive/SSP585_example/atm/hist/SSP585_example.cam.h1.2024-01-01-00000.nc"
 ds=xarray.open_dataset(file) # daily data -- open => only have metadata
 
 
